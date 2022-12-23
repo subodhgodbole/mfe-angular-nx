@@ -1,0 +1,22 @@
+<form>
+  <div *ngIf="!isLogedIn()">
+    <h2>Login</h2>
+    <div>
+        User Name:
+    </div>
+    <div>
+        <input name="userName" [(ngModel)]="userName"><br>
+    </div>
+
+    <div>
+        Password:
+    </div>
+    <div>
+        <input name="userName" type="password" [(ngModel)]="password"><br>
+    </div>
+  </div>
+  <div>
+      <button (click)="login()" *ngIf="!isLogedIn()">Login</button>
+      <button (click)="logout()" *ngIf="isLogedIn()">Logout</button>
+  </div>
+</form>
