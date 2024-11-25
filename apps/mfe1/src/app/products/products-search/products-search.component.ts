@@ -1,23 +1,33 @@
-import {Component, ViewChild, ViewContainerRef, Inject, Injector, ComponentFactoryResolver, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '@demo/auth-lib';
+import { CartService, Product } from '@demo/services';
+import { PRODUCTS } from './products';
 
 @Component({
   selector: 'app-products-search',
   templateUrl: './products-search.component.html',
+  styleUrls: ['./products-search.component.css']
 })
 export class ProductsSearchComponent {
+  public searchedProducts: Product[] = PRODUCTS;
 
-  @ViewChild('vc', { read: ViewContainerRef, static: true }) viewContainer: ViewContainerRef;
+  constructor(private authService: AuthService, private cartService: CartService) {
+      // NOP
+  }
 
-  constructor(
-    private authService: AuthService,
-    @Inject(Injector) private injector,
-    @Inject(ComponentFactoryResolver) private cfr) { }
+  public isLogedIn() {
+    return this.authService.isLoggedIn();
+  }
 
+  public addToCart(product: Product) {
+    this.cartService.addProduct(product);
+  }
 
-userName = this.authService.userName;
+  public removeFromCart(product: Product) {
+    this.cartService.removeProduct(product);
+  }
 
-  search(): void {
-    alert ('TODO: search!');
+  public isInCart(p: Product) {
+    return this.cartService.cart.products.find(prod => prod.id === p.id);
   }
 }

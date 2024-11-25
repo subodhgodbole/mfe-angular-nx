@@ -15,8 +15,9 @@
         <input name="userName" type="password" [(ngModel)]="password"><br>
     </div>
   </div>
+  <br/>
   <div>
-      <button (click)="login()" *ngIf="!isLogedIn()">Login</button>
-      <button (click)="logout()" *ngIf="isLogedIn()">Logout</button>
+      <button (click)="login()" *ngIf="!isLogedIn()" class="primary">Login</button>
+      <button (click)="logout()" *ngIf="isLogedIn()" class="secondary">Logout</button>
   </div>
 </form>

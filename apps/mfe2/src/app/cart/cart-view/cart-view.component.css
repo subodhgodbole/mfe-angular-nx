@@ -1,0 +1,46 @@
+button {
+  border: 2px solid silver;
+  background-color: white;
+  font-size: 16px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+}
+
+button:active {
+  border-color: black;
+}
+
+.table {
+  width: 50%;
+  border: 1px gray solid;
+  padding: 10px;
+  border-collapse: collapse;
+}
+
+.table th {
+  background-color: lightgray;
+  padding: 5px;
+  border: 1px gray solid;
+}
+
+.table tr {
+  border: 1px gray solid;
+  line-height: 25px;
+}
+
+.table td {
+  padding: 5px 15px;
+  border: 1px gray solid;
+}
+
+.empty-cart {
+  margin-top: 10px;
+}
+
+button.primary {
+  background-color: lightcyan;
+}
+
+button.secondary {
+  background-color: lightgray;
+}

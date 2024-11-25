@@ -1,11 +1,28 @@
 <div id="container">
     <demo-user></demo-user>
 
-    <h1>Products</h1>
-    <div>
-        <input type="text" placeholder="Search"><button (click)="search()">Search</button>
-    </div>
-    <div>
-        <ng-container #vc></ng-container>
+    <div *ngIf="isLogedIn()">
+      <h1>Products</h1>
+      <!-- <div>
+          <input type="text" placeholder="Search">
+          <button (click)="search()">Search</button>
+      </div> -->
+      <div>
+          <table class="table">
+            <thead>
+              <th style="width: 70%">Name</th>
+              <th>Actions</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let prod of searchedProducts">
+                <td>{{prod.name}}</td>
+                <td>
+                  <button (click)="addToCart(prod)" *ngIf="!isInCart(prod)" class="primary">Add To Cart</button>
+                  <button (click)="removeFromCart(prod)" *ngIf="isInCart(prod)" class="secondary">Remove From Cart</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
     </div>
 </div>

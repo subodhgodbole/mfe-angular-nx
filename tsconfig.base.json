@@ -18,6 +18,9 @@
     "paths": {
       "@demo/auth-lib": [
         "libs/auth-lib/src/index.ts"
+      ],
+      "@demo/services": [
+        "libs/services/src/index.ts"
       ]
     },
     "rootDir": "."

@@ -13,6 +13,10 @@ export const APP_ROUTES: Routes = [
       loadChildren: () => import('mfe1/Module').then(m => m.ProductsModule)
     },
     {
+      path: 'cart',
+      loadChildren: () => import('mfe2/Module').then(m => m.CartModule)
+    },
+    {
       path: '**',
       component: NotFoundComponent
     }

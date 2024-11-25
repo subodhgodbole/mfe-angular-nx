@@ -122,6 +122,125 @@
         }
       }
     },
+    "mfe2": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "apps/mfe2",
+      "sourceRoot": "apps/mfe2/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/apps/mfe2",
+            "index": "apps/mfe2/src/index.html",
+            "main": "apps/mfe2/src/main.ts",
+            "polyfills": "apps/mfe2/src/polyfills.ts",
+            "tsConfig": "apps/mfe2/tsconfig.json",
+            "aot": true,
+            "assets": [
+              "apps/mfe2/src/favicon.ico",
+              "apps/mfe2/src/assets"
+            ],
+            "styles": [],
+            "scripts": [],
+            "extraWebpackConfig": "apps/mfe2/webpack.config.js"
+          },
+          "configurations": {
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "buildOptimizer": false
+            },
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mfe2/src/environments/environment.ts",
+                  "with": "apps/mfe2/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "extraWebpackConfig": "apps/mfe2/webpack.prod.config.js"
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "mfe2:build",
+            "publicHost": "http://localhost:4000",
+            "port": 3000,
+            "extraWebpackConfig": "apps/mfe2/webpack.config.js"
+          },
+          "configurations": {
+            "development": {
+              "browserTarget": "mfe2:build:development",
+              "extraWebpackConfig": "apps/mfe2/webpack.prod.config.js"
+            },
+
+            "production": {
+              "browserTarget": "mfe2:build:production",
+              "extraWebpackConfig": "apps/mfe2/webpack.prod.config.js"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mfe2:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "apps/mfe2/src/test.ts",
+            "polyfills": "apps/mfe2/src/polyfills.ts",
+            "tsConfig": "apps/mfe2/tsconfig.spec.json",
+            "karmaConfig": "apps/mfe2/karma.conf.js",
+            "assets": [
+              "apps/mfe2/src/favicon.ico",
+              "apps/mfe2/src/assets"
+            ],
+            "styles": [
+              "apps/mfe2/src/styles.css"
+            ],
+            "scripts": [],
+            "extraWebpackConfig": "apps/mfe2/webpack.config.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mfe2/tsconfig.json",
+              "apps/mfe2/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
     "shell": {
       "projectType": "application",
       "schematics": {},
@@ -132,7 +251,7 @@
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
-            "outputPath": "dist/shell",
+            "outputPath": "dist/apps/shell",
             "index": "apps/shell/src/index.html",
             "main": "apps/shell/src/main.ts",
             "polyfills": "apps/shell/src/polyfills.ts",
@@ -187,8 +306,8 @@
           "builder": "ngx-build-plus:dev-server",
           "options": {
             "browserTarget": "shell:build",
-            "publicHost": "http://localhost:5000",
-            "port": 5000,
+            "publicHost": "http://localhost:5500",
+            "port": 5500,
             "extraWebpackConfig": "apps/shell/webpack.config.js"
           },
           "configurations": {
@@ -276,6 +395,48 @@
             "main": "libs/auth-lib/src/test.ts",
             "tsConfig": "libs/auth-lib/tsconfig.spec.json",
             "karmaConfig": "libs/auth-lib/karma.conf.js"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "services": {
+      "projectType": "library",
+      "root": "libs/services",
+      "sourceRoot": "libs/services/src",
+      "prefix": "mfe1",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/services/tsconfig.lib.json",
+            "project": "libs/services/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/services/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/services/tsconfig.lib.json",
+              "libs/services/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/services/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/services/src/test.ts",
+            "tsConfig": "libs/services/tsconfig.spec.json",
+            "karmaConfig": "libs/services/karma.conf.js"
           }
         }
       },

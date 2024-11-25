@@ -1,0 +1,19 @@
+button {
+  border: 2px solid silver;
+  background-color: white;
+  font-size: 16px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+}
+
+button:active {
+  border-color: black;
+}
+
+button.primary {
+  background-color: lightcyan;
+}
+
+button.secondary {
+  background-color: lightgray;
+}

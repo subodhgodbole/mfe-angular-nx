@@ -4,6 +4,7 @@ This project showcases how to write micro front end apps using Angular and house
 
 This project was created in Mid-Year 2022. Hence using versions which were latest at that time.
 
+- Node - v14
 - Angular - v13
 - Nx Monorepo - v12
   - I had issues using v13 hence used v12.
@@ -33,7 +34,7 @@ npm run start:mfe1
 
 ## Launch Shell Application
 
-Open browser with URL of "shell" application - <http://localhost:5000/>
+Open browser with URL of "shell" application - <http://localhost:5500/>
 
 ## About Applications
 
@@ -47,3 +48,17 @@ I have kept things very simple with respect to complexity of the micro apps as t
 ## Credits
 
 This project is prepared by referring multiple articles and documentation from internet. It is very difficult to list them all here, but many thanks to authors of those posts, which helped me get this project working.
+
+# Behind The Scene
+
+Creating new App
+
+```sh
+npm run nx g @nx/angular:application apps/mfe2
+```
+
+Creating new Lib
+
+```sh
+npm run nx g @nx/angular:library services
+```

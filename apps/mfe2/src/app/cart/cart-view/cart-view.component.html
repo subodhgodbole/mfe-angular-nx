@@ -1,0 +1,26 @@
+<div id="container">
+    <demo-user></demo-user>
+
+    <div *ngIf="isLogedIn()">
+      <h1>Cart</h1>
+      <div>
+          <table class="table">
+            <thead>
+              <th style="width: 70%">Name</th>
+              <th>Actions</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let prod of cart.products">
+                <td>{{prod.name}}</td>
+                <td>
+                  <button (click)="removeFromCart(prod)" class="secondary">Remove From Cart</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div *ngIf="cart.products.length === 0" class="empty-cart">Cart is empty.</div>
+          <br/><br/>
+          <button *ngIf="cart.products.length" (click)="checkout()" class="primary">Checkout</button>
+      </div>
+    </div>
+</div>

@@ -6,12 +6,14 @@ import { HomeComponent } from './home/home.component';
 import { ProductsModule } from './products/products.module';
 import { APP_ROUTES } from './app.routes';
 import { AuthLibModule } from '@demo/auth-lib';
+import { ServicesModule } from '@demo/services';
 
 @NgModule({
   imports: [
     BrowserModule,
     ProductsModule,
     AuthLibModule,
+    ServicesModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
   declarations: [

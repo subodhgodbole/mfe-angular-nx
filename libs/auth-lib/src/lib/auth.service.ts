@@ -6,13 +6,19 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   private _userName: string = null;
 
+  constructor() {
+    console.log('AuthService Created');
+  }
+
   public get userName(): string {
     return this._userName;
   }
 
-  constructor() { }
+  public isLoggedIn(): boolean {
+    return this._userName !== null;
+  }
 
-  login(userName: string, password: string): void {
+  login(userName: string, _password: string): void {
     this._userName = userName;
   }
 

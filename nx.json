@@ -18,7 +18,13 @@
     "mfe1": {
       "tags": []
     },
+    "mfe2": {
+      "tags": []
+    },
     "auth-lib": {
+      "tags": []
+    },
+    "services": {
       "tags": []
     }
   }

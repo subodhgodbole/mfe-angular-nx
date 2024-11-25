@@ -6,7 +6,7 @@ const share = mf.share;
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
     path.join(__dirname, '../../tsconfig.base.json'),
-    ['@demo/auth-lib']
+    ['@demo/auth-lib', '@demo/services']
 );
 
 module.exports = {
@@ -30,7 +30,8 @@ module.exports = {
         new ModuleFederationPlugin({
             library: { type: "module" },
             remotes: {
-                'mfe1': "http://localhost:3000/remoteEntry.js"
+                'mfe1': "http://localhost:3000/remoteEntry.js",
+                'mfe2': "http://localhost:4000/remoteEntry.js"
             },
             shared: share({
                 "@angular/core": {

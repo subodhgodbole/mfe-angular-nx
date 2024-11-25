@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@demo/auth-lib';
+import { CartService } from '@demo/services';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { AuthService } from '@demo/auth-lib';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private cartService: CartService) { }
 
   ngOnInit() {
   }

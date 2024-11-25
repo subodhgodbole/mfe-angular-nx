@@ -6,12 +6,13 @@ import { AuthService } from '../auth.service';
   templateUrl: './user.component.html'
 })
 export class UserComponent implements OnInit {
+  constructor(private authService: AuthService) {
+    // NOP
+  }
 
   get userName(): string {
     return this.authService.userName;
   }
-
-  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }

@@ -1,32 +1,42 @@
-input[type=text] {
-    width: 100%;
-    max-width: 400px;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid silver;
-    font-size: 20px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
 button {
     border: 2px solid silver;
     background-color: white;
     font-size: 16px;
-    padding: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 5px 10px 5px 10px;
     border-radius: 10px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    cursor: pointer;
 }
 
 button:active {
     border-color: black;
 }
 
-#container {
-    border: 2px darkred dashed;
-    padding: 20px;
+.table {
+    width: 50%;
+    border: 1px gray solid;
+    padding: 10px;
+    border-collapse: collapse;
+}
+
+.table th {
+  background-color: lightgray;
+  padding: 5px;
+  border: 1px gray solid;
+}
+
+.table tr {
+  border: 1px gray solid;
+  line-height: 25px;
+}
+
+.table td {
+  padding: 5px 15px;
+  border: 1px gray solid;
+}
+
+button.primary {
+  background-color: lightcyan;
+}
+
+button.secondary {
+  background-color: lightgray;
 }
