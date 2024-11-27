@@ -9,9 +9,9 @@ import { PRODUCTS } from './products';
   styleUrls: ['./products-search.component.css']
 })
 export class ProductsSearchComponent {
-  public searchedProducts: Product[] = PRODUCTS;
+  protected searchedProducts: Product[] = PRODUCTS;
 
-  constructor(private authService: AuthService, private cartService: CartService) {
+  public constructor(private authService: AuthService, private cartService: CartService) {
       // NOP
   }
 

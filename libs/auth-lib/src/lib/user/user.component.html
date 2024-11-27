@@ -1,2 +1,5 @@
-<p *ngIf="userName">Loggedin User: {{userName}}</p>
+<p *ngIf="userName">
+  Welcome <span *ngIf="profile.firstName">{{profile.firstName}} {{profile.lastName}}</span>
+  <span *ngIf="!profile.firstName">{{userName}}</span>
+</p>
 <p *ngIf="!userName">You are not logged in.</p>

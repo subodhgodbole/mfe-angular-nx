@@ -25,11 +25,13 @@ npm start
 ```
 
 Option 2:
-Start both applications side by side on two separate terminals.
+Start applications side by side on separate terminals.
 
 ```sh
 npm run start:shell
 npm run start:mfe1
+npm run start:mfe2
+npm run start:mfe3
 ```
 
 ## Launch Shell Application
@@ -40,25 +42,11 @@ Open browser with URL of "shell" application - <http://localhost:5500/>
 
 I have kept things very simple with respect to complexity of the micro apps as the main topic is to showcase how Micro Frontend works. This project has below -
 
-- Two Micro Apps – "shell" and "mfe1".
-  - "shell" is primary Micro App.
-  - "mfe1" is second Micro App.
+- Micro Apps – "shell", "mfe1", "mfe2", and "mfe3".
+  - "shell" is Host Micro App.
+  - "mfe1", "mfe2", "mfe3" are Remote Apps.
 - Shared libraries – To showcase how to share code using libraries.
 
 ## Credits
 
 This project is prepared by referring multiple articles and documentation from internet. It is very difficult to list them all here, but many thanks to authors of those posts, which helped me get this project working.
-
-# Behind The Scene
-
-Creating new App
-
-```sh
-npm run nx g @nx/angular:application apps/mfe2
-```
-
-Creating new Lib
-
-```sh
-npm run nx g @nx/angular:library services
-```

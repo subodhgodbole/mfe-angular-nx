@@ -31,7 +31,8 @@ module.exports = {
             library: { type: "module" },
             remotes: {
                 'mfe1': "http://localhost:3000/remoteEntry.js",
-                'mfe2': "http://localhost:4000/remoteEntry.js"
+                'mfe2': "http://localhost:4000/remoteEntry.js",
+                'mfe3': "http://localhost:2000/remoteEntry.js"
             },
             shared: share({
                 "@angular/core": {

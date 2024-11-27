@@ -7,10 +7,9 @@ import { CartService } from '@demo/services';
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private authService: AuthService, private cartService: CartService) { }
+  public constructor(private authService: AuthService, private cartService: CartService) { }
 
   ngOnInit() {
+    // NOP
   }
-
 }

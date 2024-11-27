@@ -9,7 +9,7 @@ export class CartService {
     products: []
   };
 
-  constructor() {
+  public constructor() {
     console.log('CartService Created');
   }
 

@@ -8,9 +8,9 @@ import { Cart, CartService, Product } from '@demo/services';
   styleUrls: ['./cart-view.component.css']
 })
 export class CartViewComponent implements OnInit {
-  public cart: Cart;
+  protected cart: Cart;
 
-  constructor(private authService: AuthService, private cartService: CartService) {
+  public constructor(private authService: AuthService, private cartService: CartService) {
       // NOP
   }
 

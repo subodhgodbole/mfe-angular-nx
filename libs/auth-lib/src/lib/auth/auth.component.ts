@@ -7,23 +7,24 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent {
+  protected userName: string;
+  protected password: string;
 
-  constructor(private authService: AuthService) { }
+  public constructor(private authService: AuthService) {
+    // NOP
+  }
 
-  userName: string;
-  password: string;
-
-  login(): void {
+  protected login(): void {
     this.authService.login(this.userName, this.password);
     this.userName = null;
     this.password = null;
   }
 
-  logout(): void {
+  protected logout(): void {
     this.authService.logout();
   }
 
-  isLogedIn(): boolean {
+  public isLogedIn(): boolean {
     return !!this.authService.userName;
   }
 }

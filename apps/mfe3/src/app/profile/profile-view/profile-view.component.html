@@ -1,0 +1,27 @@
+<div>
+    <demo-user></demo-user>
+
+    <div *ngIf="isLogedIn()">
+      <h1>Profile</h1>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td><label>User Name: </label>:</td>
+            <td><label>{{userName}}</label></td>
+          </tr>
+          <tr>
+            <td><label>First Name: </label>:</td>
+            <td><input name="firstName" [(ngModel)]="firstName" /></td>
+          </tr>
+          <tr>
+            <td><label><label>Last Name: </label>:</label>: </td>
+            <td><input name="lastName" [(ngModel)]="lastName" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <br/>
+        <button (click)="setProfile()" class="primary">Submit</button>
+      </div>
+    </div>
+</div>
